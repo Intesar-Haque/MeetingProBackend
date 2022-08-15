@@ -17,6 +17,9 @@ io.on('connection', socket => {
         socket.on('chat', (content) => {
             socket.broadcast.to(roomId).emit('new-message', content);
         })
+        socket.on('draw', (content) => {
+            socket.broadcast.to(roomId).emit('new-draw', content);
+        })
     })
 
 });
